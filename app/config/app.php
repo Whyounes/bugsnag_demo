@@ -15,6 +15,7 @@ return array(
 
     'debug' => true,
 
+    'bugsnag_api_key'   => 'YOUR API KEY',
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -121,7 +122,6 @@ return array(
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
     ),
 
     /*
@@ -187,7 +187,6 @@ return array(
         'Str'               => 'Illuminate\Support\Str',
         'URL'               => 'Illuminate\Support\Facades\URL',
         'Validator'         => 'Illuminate\Support\Facades\Validator',
-        'View'              => 'Illuminate\Support\Facades\View',
-        'Bugsnag'           => 'Bugsnag\BugsnagLaravel\BugsnagFacade'
+        'View'              => 'Illuminate\Support\Facades\View'
 )
 );

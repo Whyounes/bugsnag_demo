@@ -78,6 +78,21 @@ App::down(function()
 |
 */
 
+App::singleton('bugsnag', function() {
+    $bugsnag = new Bugsnag_Client( Config::get('app.bugsnag_api_key') );
+    $bugsnag->setReleaseStage(App::environment());
+
+    return $bugsnag;
+});
+
+App::error(function($exception) {
+    App::make('bugsnag')->notifyException($exception, null, "error");
+});
+
+App::fatal(function($exception) {
+    App::make('bugsnag')->notifyException($exception, null, "error");
+});
+
 App::make('bugsnag')->setUser([
     'email' => Auth::check() ? Auth::user()->email : 'Guest user'
 ]);
