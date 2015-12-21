@@ -41,7 +41,7 @@
 										<td>{{ $question->id }}</td>
 										<td>{{ link_to_route( 'questions.show', $question->title, [ 'id' => $question->id ] ); }}</td>
 										<td>{{{ str_limit( $question->description, 90, '...' ) }}}</td>
-										<td>{{ isset($question->user) ? $question->user->username : 'User deleted' }}</td>
+										<td>{{ $question->user->username }}</td>
 										<td>{{ $question->created_at }}</td>
 									</tr>
 								@endforeach

@@ -1,7 +1,5 @@
 <?php 
 
-use Neoos\Foto\Models\User;
-
 class UserTableSeeder extends Seeder {
 
     public function run()
